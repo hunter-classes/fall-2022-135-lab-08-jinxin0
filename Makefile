@@ -1,16 +1,18 @@
-main: main.o invert.o imageio.o
-	g++ -o main main.o invert.o imageio.o
+main: main.o imageio.o invert.o invert_half.o
+	g++ -o main main.o imageio.o invert.o invert_half.o
 
 sample: sample.o imageio.o
 	g++ -o sample sample.o imageio.o
 
-main.o: main.cpp invert.h
+main.o: main.cpp invert.h invert_half.h
 
 sample.o: sample.cpp imageio.h
 
 imageio.o: imageio.cpp imageio.h
 
 invert.o: invert.cpp invert.h imageio.h
+
+invert_half.o: invert_half.cpp invert_half.h imageio.h
 
 clean:
 	rm -f *.o
