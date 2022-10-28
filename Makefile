@@ -1,5 +1,5 @@
-main: main.o imageio.o invert.o invert_half.o box.o
-	g++ -o main main.o imageio.o invert.o invert_half.o box.o
+main: main.o imageio.o invert.o invert_half.o box.o frame.o scale.o
+	g++ -o main main.o imageio.o invert.o invert_half.o box.o frame.o scale.o
 
 sample: sample.o imageio.o
 	g++ -o sample sample.o imageio.o
@@ -15,6 +15,10 @@ invert.o: invert.cpp invert.h imageio.h
 invert_half.o: invert_half.cpp invert_half.h imageio.h
 
 box.o: box.cpp box.h imageio.h
+
+frame.o: frame.cpp frame.h imageio.h
+
+scale.o: scale.cpp scale.h imageio.h
 
 clean:
 	rm -f *.o
