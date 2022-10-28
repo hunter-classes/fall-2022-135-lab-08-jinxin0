@@ -4,6 +4,7 @@
 #include "box.h"
 #include "frame.h"
 #include "scale.h"
+#include "pixelate.h"
 
 int main()
 {
@@ -12,5 +13,6 @@ int main()
 	box("image1.pgm", "taskC.pgm");
 	frame("image1.pgm", "taskD.pgm");
 	scale("image3.pgm", "taskE.pgm");
+	pixelate("image3.pgm", "taskF.pgm");
 	return 0;
 }

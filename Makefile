@@ -1,5 +1,5 @@
-main: main.o imageio.o invert.o invert_half.o box.o frame.o scale.o
-	g++ -o main main.o imageio.o invert.o invert_half.o box.o frame.o scale.o
+main: main.o imageio.o invert.o invert_half.o box.o frame.o scale.o pixelate.o
+	g++ -o main main.o imageio.o invert.o invert_half.o box.o frame.o scale.o pixelate.o
 
 sample: sample.o imageio.o
 	g++ -o sample sample.o imageio.o
@@ -19,6 +19,8 @@ box.o: box.cpp box.h imageio.h
 frame.o: frame.cpp frame.h imageio.h
 
 scale.o: scale.cpp scale.h imageio.h
+
+pixelate.o: pixelate.cpp pixelate.h imageio.h
 
 clean:
 	rm -f *.o
